@@ -58,7 +58,7 @@ public class NewUserRegistrationPage {
         registerConfirmPasswordId.sendKeys(confirmPassword);
     }
     public void registerGroup(){
-        registerGroupId.sendKeys("group 5 assessment (2026)");
+        registerGroupId.sendKeys("group 5 assignment");
     }
     public void clickCreateButton(){
         registerSubmitId.click();
