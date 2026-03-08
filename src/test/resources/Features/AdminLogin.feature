@@ -6,8 +6,14 @@ Feature: Admin User Login
     When the admin user enters valid email <email>
     And the admin user enters valid password <password>
     And the admin user clicks the login button
-    And the admin user clicks tool menu
     Then the admin user has logged in successfully
+    When the admin user clicks on the user dropdown menu
+    And the admin user clicks on the admin panel option
+    And the admin user clicks on the approval button
+    And the admin search by email address <emailAddress>
+    Then the admin user clicks on the approve button
+    When the admin user clicks on the users button
+    Then the admin user change the user role to admin
 
     Examples:
       |email             | password    |

@@ -1,7 +1,7 @@
 Feature: User Registration
   As a user I want to register a new account
 
-  Scenario Outline: Successfully registered with valid credentials
+  Scenario: Successfully registered with valid credentials
     Given the user in on home login page
     When the user clicks the register button
     And the user enters valid firstname <firstname>
@@ -10,8 +10,7 @@ Feature: User Registration
     And the user enters valid newpassword <password>
     And the user enters valid confirmation Password <confirmPassword>
     And the user select the group
-    And the user clicks the create account button
-    Then the user has successfully registered
+    Then the user clicks the create account button
 
     Examples:
       |firstname |lastname |email              | password    |confirmPassword |

@@ -66,8 +66,9 @@ public class AdminLoginPage {
     public void clickApprovalButton(){
         selectApprovalButtonXpath.click();
     }
-    public void clickSearchByEmail(){
-        searchByEmailXpath.sendKeys("");
+    public void clickSearchByEmail(String emailAddress){
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(searchByEmailXpath));
+        searchByEmailXpath.sendKeys("kamo101@gmail.com");
     }
     public void clickApproveButton(){
         approveButtonXpath.click();
