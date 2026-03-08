@@ -10,4 +10,5 @@ public class Base {
   final WebDriver driver = browserFactory.startBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app/");
   public NewUserRegistrationPage newUserRegistrationPage = PageFactory.initElements(driver, NewUserRegistrationPage.class);
   public AdminLoginPage adminLoginPage = PageFactory.initElements(driver, AdminLoginPage.class);
+  TakeScreenshot takeScreenshot = new TakeScreenshot();
 }
