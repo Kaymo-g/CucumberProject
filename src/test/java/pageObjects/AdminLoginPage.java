@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -84,6 +85,17 @@ public class AdminLoginPage {
     }
     public void makeUserAdmin(){
         selectAdminUserXpath.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        System.out.println(alert.getText());
+        alert.accept();
+
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
+        System.out.println(alert1.getText());
+        alert.accept();
+
+        driver.quit();
     }
 
 }
