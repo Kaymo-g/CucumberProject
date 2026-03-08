@@ -1,7 +1,7 @@
 Feature: User Registration
   As a user I want to register a new account
 
-  Scenario: Successfully registered with valid credentials
+  Scenario Outline: Successfully registered with valid credentials
     Given the user in on home login page
     When the user clicks the register button
     And the user enters valid firstname <firstname>

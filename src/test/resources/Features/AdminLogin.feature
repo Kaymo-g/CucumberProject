@@ -13,6 +13,7 @@ Feature: Admin User Login
     And the admin search by email address <emailAddress>
     Then the admin user clicks on the approve button
     When the admin user clicks on the users button
+    And the admin search by email address1 <emailAddress>
     Then the admin user change the user role to admin
 
     Examples:

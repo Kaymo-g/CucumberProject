@@ -33,7 +33,9 @@ public class AdminLoginPage {
     WebElement approveButtonXpath;
     @FindBy(xpath = "//button[contains(.,'Users')]")
     WebElement selectUsersButtonXpath;
-    @FindBy(xpath = "//select/option[@value='admin']")
+    @FindBy(xpath = "//input[contains(@placeholder,'Search users')]")
+    WebElement searchByEmail1Xpath;
+        @FindBy(xpath = "//select/option[@value='admin']")
     WebElement selectAdminUserXpath;
 
     public AdminLoginPage(WebDriver driver){
@@ -75,6 +77,10 @@ public class AdminLoginPage {
     }
     public void clickUsersButton(){
         selectUsersButtonXpath.click();
+    }
+    public void clickSearchByEmail1(String emailAddress){
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(searchByEmail1Xpath));
+        searchByEmail1Xpath.sendKeys("kamo101@gmail.com");
     }
     public void makeUserAdmin(){
         selectAdminUserXpath.click();

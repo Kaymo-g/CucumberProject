@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utils.Base;
 
+import static java.lang.Thread.sleep;
+
 public class AdminLoginSteps extends Base {
 
     @Given("the admin user is on login page")
@@ -40,8 +42,9 @@ public class AdminLoginSteps extends Base {
         adminLoginPage.clickApprovalButton();
     }
     @And("the admin search by email address {}")
-    public void the_admin_search_by_email_address(String emailAddress) {
+    public void the_admin_search_by_email_address(String emailAddress) throws InterruptedException {
         adminLoginPage.clickSearchByEmail(emailAddress);
+        Thread.sleep(3000);
     }
     @Then("the admin user clicks on the approve button")
     public void the_admin_user_clicks_on_the_approve_button() {
@@ -50,6 +53,10 @@ public class AdminLoginSteps extends Base {
     @When("the admin user clicks on the users button")
     public void the_admin_user_clicks_on_the_users_button() {
         adminLoginPage.clickUsersButton();
+    }
+    @And("the admin search by email address1 {}")
+    public void the_admin_search_by_email_address1(String emailAddress) {
+        adminLoginPage.clickSearchByEmail1(emailAddress);
     }
     @Then("the admin user change the user role to admin")
     public void the_admin_user_change_the_user_type() {
